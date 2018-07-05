@@ -27,7 +27,7 @@ function sendUnlockRequest($sip) {
 }
 
 $agi = new AGI();
-$asterisk_response = $agi->get_variable('CALLERID(number)');
+$asterisk_response = $agi->get_variable('DIALEDPEERNUMBER');
 $sip = $asterisk_response["data"];
 $status = sendUnlockRequest($sip);
 $agi->verbose($status);
